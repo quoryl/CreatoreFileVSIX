@@ -321,9 +321,9 @@ namespace CreatoreFileVSIX
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            var dialog = new InputDialog(titolo, messaggio);
+            var dialog = new TableSelector();
             bool? result = dialog.ShowModal();
-            return result == true ? dialog.InputText : string.Empty;
+            return result == true ? dialog.SelectedTableName : string.Empty;
         }
 
     }

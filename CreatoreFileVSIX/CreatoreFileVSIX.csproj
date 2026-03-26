@@ -52,6 +52,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CreatoreFileVSIXPackage.cs" />
+    <Compile Include="TableSelector.xaml.cs">
+      <DependentUpon>TableSelector.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="source.extension.vsixmanifest">
@@ -86,6 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="InputDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TableSelector.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
