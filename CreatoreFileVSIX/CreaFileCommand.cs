@@ -323,6 +323,12 @@ namespace CreatoreFileVSIX
 
             var dialog = new TableSelector();
             bool? result = dialog.ShowModal();
+
+            string selectedTable = dialog.SelectedTableName;
+
+            var dialogColumns = new ColumnSelector();
+            dialogColumns.ShowModal();
+
             return result == true ? dialog.SelectedTableName : string.Empty;
         }
 

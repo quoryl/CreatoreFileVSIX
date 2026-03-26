@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ColumnSelector.xaml.cs">
+      <DependentUpon>ColumnSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreaFileCommand.cs" />
     <Compile Include="GestoreTemplate.cs" />
     <Compile Include="InputDialog.xaml.cs">
@@ -88,6 +91,9 @@
     <Content Include="Resources\CreaFileCommand.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ColumnSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InputDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
