@@ -53,10 +53,16 @@
     <Compile Include="InputDialog.xaml.cs">
       <DependentUpon>InputDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProjectBrowser.xaml.cs">
+      <DependentUpon>ProjectBrowser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CreatoreFileVSIXPackage.cs" />
     <Compile Include="TableSelector.xaml.cs">
       <DependentUpon>TableSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateSelector.xaml.cs">
+      <DependentUpon>TemplateSelector.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -97,7 +103,13 @@
     <Page Include="InputDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ProjectBrowser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TableSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TemplateSelector.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

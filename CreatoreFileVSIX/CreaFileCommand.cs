@@ -329,7 +329,10 @@ namespace CreatoreFileVSIX
             var dialogColumns = new ColumnSelector();
             dialogColumns.ShowModal();
 
-            return result == true ? dialog.SelectedTableName : string.Empty;
+            var dialogTemplates = new TemplateSelector();
+            dialogTemplates.ShowModal();
+
+            return string.Empty;
         }
 
     }
