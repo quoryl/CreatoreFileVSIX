@@ -4,7 +4,7 @@
     <Platform Name="arm64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="CreatoreFileVSIX/CreatoreFileVSIX.csproj">
+  <Project Path="CreatoreFileVSIX/CreatoreFileVSIX.csproj" Id="870358e6-27a8-4a09-ad45-bcb5c3104561">
     <Platform Solution="*|arm64" Project="arm64" />
     <Platform Solution="*|x86" Project="x86" />
   </Project>

@@ -1,0 +1,67 @@
+<platform:DialogWindow x:Class="CreatoreFileVSIX.InputDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:platform="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
+             xmlns:shell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
+             mc:Ignorable="d" 
+             Title="Generatore Architettura" Height="160" Width="400"
+             WindowStartupLocation="CenterScreen"
+             HasDialogFrame="False"
+             WindowStyle="None"
+             BorderThickness="0"
+             BorderBrush="Transparent"
+             AllowsTransparency="True"
+             ResizeMode="NoResize"
+             ShowInTaskbar="False">
+             
+    <platform:DialogWindow.Background>
+        <DynamicResource ResourceKey="{x:Static platform:EnvironmentColors.ToolWindowBackgroundBrushKey}"/>
+    </platform:DialogWindow.Background>
+    <platform:DialogWindow.Foreground>
+        <DynamicResource ResourceKey="{x:Static platform:EnvironmentColors.ToolWindowTextBrushKey}"/>
+    </platform:DialogWindow.Foreground>
+  
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock 
+            Margin="5"
+            x:Name="MessageText"           
+            Text="Entity name" />
+        
+        <TextBox 
+            x:Name="InputTextBox" 
+            Margin="5" 
+            
+            Grid.Row="1" />
+
+        <Button 
+            x:Name="ConfirmButton" 
+            Content="Genera" 
+            Width="100" 
+            HorizontalAlignment="Right" 
+            Margin="5" 
+            IsDefault="True" 
+            Grid.Row="2" 
+            Click="ConfirmButton_Click" />
+
+        <Button 
+            x:Name="CancelButton" 
+            Content="Cancel" 
+            Width="100" 
+            HorizontalAlignment="Right" 
+            Margin="5" 
+            IsCancel="True" 
+            Grid.Row="3" 
+            Click="CancelButton_Click" />  
+
+    </Grid>
+</platform:DialogWindow>

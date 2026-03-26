@@ -118,22 +118,22 @@ namespace CreatoreFileVSIX
 
                 Project progettoControllers = tuttiIProgetti.Find(p =>
                 {
-                    Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
+                    ThreadHelper.ThrowIfNotOnUIThread();
                     return p.Name == controllerProjectName;
                 });
                 Project progettoServices = tuttiIProgetti.Find(p =>
                 {
-                    Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
+                    ThreadHelper.ThrowIfNotOnUIThread();
                     return p.Name == servicesProjectName;
                 });
                 Project progettoProxies = tuttiIProgetti.Find(p =>
                 {
-                    Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
+                    ThreadHelper.ThrowIfNotOnUIThread();
                     return p.Name == proxiesProjectName;
                 });
                 Project progettoEntities = tuttiIProgetti.Find(p =>
                 {
-                    Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
+                    ThreadHelper.ThrowIfNotOnUIThread();
                     return p.Name == servicesProjectName;
                 });
 
@@ -319,29 +319,11 @@ namespace CreatoreFileVSIX
 
         private string MostraFinestraInput(string titolo, string messaggio)
         {
-            Form prompt = new Form()
-            {
-                Width = 400,
-                Height = 160,
-                FormBorderStyle = FormBorderStyle.FixedDialog,
-                Text = titolo,
-                StartPosition = FormStartPosition.CenterScreen,
-                MaximizeBox = false
-            };
+            ThreadHelper.ThrowIfNotOnUIThread();
 
-            Label textLabel = new Label() { Left = 20, Top = 20, Text = messaggio, Width = 340 };
-            TextBox inputBox = new TextBox() { Left = 20, Top = 50, Width = 340 };
-            Button btnConferma = new Button() { Text = "Genera", Left = 260, Width = 100, Top = 80, DialogResult = DialogResult.OK };
-
-            prompt.Controls.Add(textLabel);
-            prompt.Controls.Add(inputBox);
-            prompt.Controls.Add(btnConferma);
-
-            // Permette di premere "Invio" per confermare
-            prompt.AcceptButton = btnConferma;
-
-            // Se l'utente clicca Genera, restituiamo il testo, altrimenti una stringa vuota
-            return prompt.ShowDialog() == DialogResult.OK ? inputBox.Text.Trim() : string.Empty;
+            var dialog = new InputDialog(titolo, messaggio);
+            bool? result = dialog.ShowModal();
+            return result == true ? dialog.InputText : string.Empty;
         }
 
     }
